@@ -1,0 +1,21 @@
+﻿@model Cadastro_Cliente_Ponto.Models.Funcionario
+
+@if (ViewBag.erro != null)
+{
+    <label class="label label-danger">@ViewBag.erro</label>
+}
+else
+{
+    using (Html.BeginForm("Excluir", "Funcionarios", FormMethod.Post))
+    {
+
+        @Html.HiddenFor(m => m.Codigo)
+        <label>Deseja de fato excluir este registro?</label>
+        <input type="submit" value="Sim" />
+
+        <input type="button" value="Não" />
+    }
+
+}
+
+

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Cadastro_Cliente_Ponto.Models.Funcionario>
+@using (Html.BeginForm())
+{
+    <h1>Controle de Ponto</h1>
+    <br />
+    <div class="row">
+        <div>
+            <div class="col-md-3">
+                @Html.DropDownList("funcionarioID", new SelectList(Model, "Codigo", "Nome"))
+            </div>
+            
+            <div class="col-md-2">
+                <input type="submit" value="Registrar Ponto" />
+            </div>
+        </div>
+    </div>
+}
