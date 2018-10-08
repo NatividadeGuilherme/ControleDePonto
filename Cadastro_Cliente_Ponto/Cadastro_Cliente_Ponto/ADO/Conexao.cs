@@ -11,7 +11,7 @@ namespace Cadastro_Cliente_Ponto.ADO
 
         public string RetornarConexao()
         {
-            this.Conection = @"Data Source=RIFT-DES-06\DEV_DB;Initial Catalog=CONTROLE_PONTO;Integrated Security=True;Pooling=False";
+            this.Conection = @"Data Source=EDUARDO-NOTE;Initial Catalog=CONTROLE_PONTO;Integrated Security=True;Pooling=False";
             return Conection;
             
         }
