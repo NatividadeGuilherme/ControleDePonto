@@ -1,0 +1,68 @@
+﻿@model Cadastro_Cliente_Ponto.Models.Funcionario
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+@if(ViewBag.erro != null)
+{
+    <label class="label label-danger">@ViewBag.erro</label>
+}
+else
+{
+
+}
+@using (Html.BeginForm())
+{
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <label>Nome:</label>
+            @Html.EditorFor(m => Model.Nome)
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <label>Endereço: </label>
+            @Html.EditorFor(m => Model.Endereco)
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <label>CPF: </label>
+            @Html.EditorFor(m => Model.Cpf)
+        </div>
+    </div>
+
+
+    @*<div class="col-md-2">
+            <label>Data de Nascimento: </label>
+            @Html.EditorFor(m => m.Data_De_Nascimento, new { @class = "datepicker" })
+        </div>*@
+    <div class="row">
+        <div class="col-md-12">
+            <label>Data de Nascimento: </label>
+            <div class="input-group date" data-provide="datepicker">
+                @Html.EditorFor(m => m.Data_De_Nascimento, new { @class = "datepicker" })
+                <div class="input-group-addon" style="visibility:hidden">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" name="CadastrarFuncionario" value="Cadastrar" class="btn btn-danger" />
+        </div>
+    </div>
+}
+
+<script>
+    //$('#datepicker').datepicker();
+    $('.datepicker').datepicker({
+        format: 'yyyy/mm/dd',
+        startDate: '-3d'
+    });
+</script>
